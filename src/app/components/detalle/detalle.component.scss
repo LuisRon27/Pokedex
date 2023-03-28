@@ -1,0 +1,257 @@
+@use "../../../assets/styles/var.scss";
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 3.75rem;
+}
+
+#datos {
+    height: 37.5rem;
+    width: 94vw;
+    background-color: #F9F8CD;
+    display: grid;
+    grid-template-rows: 1fr 3fr 3fr;
+
+    .area:first-child {
+        flex-grow: 1;
+        background-color: #99a094;
+        background-image: linear-gradient(45deg, #A4AE9E 25%, transparent 25%, transparent 75%, #A4AE9E 75%, #A4AE9E),
+            linear-gradient(-45deg, #A4AE9E 25%, transparent 25%, transparent 75%, #A4AE9E 75%, #A4AE9E);
+        background-size: 20px 20px;
+
+    }
+
+    .area {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding-left: 60%;
+        padding-right: 20px;
+        background-color: #d3ecf6;
+        background-image: linear-gradient(45deg, #c4e8f8 25%, transparent 25%, transparent 75%, #c4e8f8 75%, #c4e8f8),
+            linear-gradient(-45deg, #c4e8f8 25%, transparent 25%, transparent 75%, #c4e8f8 75%, #c4e8f8);
+        background-size: 20px 20px;
+        font-size: larger;
+
+        p {
+            margin: 0.625rem 0.625rem;
+        }
+    }
+
+    .area:last-child {
+        background: repeating-linear-gradient(0deg,
+                #60E030,
+                #60E030 2px,
+                #bfd678 2px,
+                #bfd678 4px,
+            );
+    }
+
+}
+
+/*============= Datos del Pokemon Seleccionado ===============*/
+.etiqueta {
+    display: inline-block;
+    background-color: #309AF5;
+    border-radius: 5px;
+    color: var.$texto-blanco;
+    padding: 0.4rem 1.25rem;
+    font-size: x-large;
+    width: 6.25rem;
+    text-align: center;
+    margin-right: 1.25rem;
+}
+
+.tipo {
+    background-color: #99A094;
+    border-radius: 5px;
+    color: var.$texto-blanco;
+    padding: 0.4rem 1.25rem;
+    margin-left: 0.4rem;
+}
+
+/* ================= Descripcion del Pokemon Seleccionado ========================= */
+#descripcionContainer {
+
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    background-color: #F5F7F9;
+    padding: 5px;
+    border-radius: 10px;
+    height: 70%;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.6);
+
+    p {
+        margin: 10px 5px;
+        color: black;
+    }
+
+    div {
+        background-color: #daeac4;
+        height: 90%;
+        margin: 5px;
+        margin-top: 10px;
+
+        &:first-child {
+            border-radius: 0 8px 8px 0;
+        }
+
+        &:last-child {
+            border-radius: 8px 0 0 8px;
+        }
+
+    }
+
+}
+
+/* =============== Buttom Open/Close Detalle =================== */
+
+button {
+
+    background-color: #0060F0;
+    border-radius: 0 25px 25px 0;
+    border: 5px solid #004ec3;
+    cursor: pointer;
+
+    img {
+        height: 3.125rem;
+        transition: 0.5s;
+        transition-timing-function: ease-in-out;
+
+        &.girar {
+            rotate: 180deg;
+        }
+
+        &:hover {
+            scale: 1.1;
+            background-color: #004ec3;
+        }
+    }
+}
+
+button:hover {
+    transition: 0.3s;
+    background-color: #004ec3;
+}
+
+/* =============== background opacity =================== */
+
+#backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.378);
+    z-index: -1;
+    opacity: 1;
+
+    &.escondido {
+        pointer-events: none;
+        opacity: 0;
+    }
+}
+
+/*============= Media Queries ================*/
+@media (max-width:991px) {
+
+    #container {
+
+        display: grid;
+        grid-template-columns: 0.5fr 3.75rem;
+        margin-bottom: 40rem;
+
+    }
+
+    app-tarjeta-pokemon {
+        font-size: 1.5rem;
+        width: 100%;
+        gap: 0;
+    }
+
+    #container #datos .area {
+        padding-left: 50%;
+
+    }
+
+    #container #datos .area .etiqueta {
+        font-size: 1.5rem;
+        width: 4rem;
+    }
+
+
+    .tipo {
+
+        font-size: 1.5rem;
+        padding: 0.4rem 1rem;
+        margin-left: 0rem;
+    }
+}
+
+
+@media (max-width:768px) {
+
+    #container {
+        display: grid;
+        grid-template-columns: 0.5fr 3.75rem;
+        margin-bottom: 40rem;
+    }
+
+    app-tarjeta-pokemon {
+        font-size: 1.5rem;
+        width: 100%;
+        gap: 0;
+    }
+
+    #container #datos .area {
+        padding-left: 50%;
+    }
+
+    #container #datos .area .etiqueta {
+        font-size: 1.5rem;
+        width: 4rem;
+    }
+
+    .tipo {
+        font-size: 1.5rem;
+        padding: 0.4rem 1rem;
+        margin-left: 0rem;
+    }
+}
+
+@media (max-width:450px) {
+
+    #container {
+        display: grid;
+        grid-template-columns: 0.5fr 3.75rem;
+        margin-bottom: 50rem;
+    }
+
+    app-tarjeta-pokemon {
+        font-size: 1rem;
+        width: 105%;
+        gap: 0;
+    }
+
+    #container #datos .area {
+        padding-left: 50%;
+    }
+
+    #container #datos .area .etiqueta {
+        font-size: 1.5rem;
+        width: 4rem;
+    }
+
+
+    .tipo {
+        font-size: 1.5rem;
+        padding: 0.2rem;
+        margin-left: .5rem;
+    }
+
+    #container #datos .area #descripcionContainer p {
+        font-size: 1.3rem;
+    }
+
+}

@@ -1,0 +1,62 @@
+#container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    isolation: isolate;
+
+
+    &.seleccionado {
+        ::before {
+            content: "";
+            position: absolute;
+            height: 120%;
+            width: calc(100% + 8px);
+            top: -4px;
+            left: 0px;
+            background-color: #ED1C24;
+            z-index: -2;
+            border-radius: 5px;
+        }
+    }
+}
+
+#flecha {
+    position: absolute;
+    height: 1.25rem;
+    padding: 0 0.625rem;
+}
+
+#tarjeta {
+    display: flex;
+    align-items: center;
+    background-color: #F5F7F9;
+    border-radius: 25px 5px 5px 25px;
+    width: 90%;
+    font-size: larger;
+    padding-left: 0.313rem;
+    margin-left: 1.875rem;
+    gap: 1rem;
+    cursor: pointer;
+
+    &.seleccionado {
+        background-color: #F4903C;
+        box-shadow: inset 0px 0px 7px 4px #F5F7F9;
+    }
+
+    .numero {
+        font-size: 2rem;
+    }
+}
+
+#circulo {
+    border-radius: 50%;
+
+    img {
+        width: 1.8rem;
+    }
+
+}
+
+img {
+    max-height: 2.5rem;
+}

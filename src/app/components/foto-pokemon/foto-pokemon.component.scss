@@ -1,0 +1,21 @@
+#container{
+    box-shadow:
+    0 0 0 5px #309AF5,
+    0 0 0 20px #fae45d;
+
+    max-width: 31.25rem;
+    aspect-ratio: 1;
+    border-radius: 1.563rem;
+    background: repeating-linear-gradient(
+        to bottom,
+        #f5f7f9,
+        #f5f7f9 15px,
+        #e0ebf3 15px,
+        #e0ebf3 25px,
+    ) ;
+
+    img{
+        width: 100%;
+        image-rendering: pixelated;
+    }
+}

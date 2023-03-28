@@ -1,0 +1,38 @@
+<!--======== background opacity =========-->
+<div id="backdrop" [ngClass]="{escondido: !abierto}" (click)="clicked.emit()" ></div>
+
+<div id="container">
+
+    <div id="datos">
+
+        <!--======== Pokemon Seleccionado =========-->
+        <div class="area">
+            <app-tarjeta-pokemon [fullData]="pokemon" [seleccionado]="true">
+                
+            </app-tarjeta-pokemon>
+        </div>
+        
+        <!--======== Datos del Pokemon Seleccionado =========-->
+        <div class="area">
+            <p><span class="etiqueta">Tipo</span><span class="tipo" *ngFor="let tipo of pokemon?.types"> {{tipo.type.name | titlecase}} </span></p>
+            <p><span class="etiqueta">Altura</span>{{pokemon?.height}}'</p>
+            <p><span class="etiqueta">Peso</span>{{pokemon?.weight}} lbs.</p>
+        </div>
+        
+        <!--======== Descripcion del Pokemon Seleccionado =========-->
+        <div class="area">
+            <div id="descripcionContainer">
+                <div></div>
+                <p> {{descripcion}} </p>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <!--======== Buttom Open/Close Detalle =========-->
+    <button (click)="clicked.emit()">
+        <img src="../../../assets/flecha.png" alt="" [ngClass]="{girar: abierto}">
+    </button>
+
+</div>
+
