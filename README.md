@@ -1,5 +1,8 @@
 # Pokedex
 
+![Captura web_28-3-2023_112219_localhost](https://user-images.githubusercontent.com/116908552/228275286-102c2772-61f7-4b05-85a8-9b40a409c2e0.jpeg)
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
 
 ## Development server
